@@ -1,0 +1,24 @@
+namespace: api
+environment:
+  instrumentationKey: "" #TBD
+  redisConnectionString: "" #TBD
+image:
+  repository: "" #TBD
+  tag: "default"
+  pullPolicy: "" #TBD
+replicaCount: 1
+service:
+  type: LoadBalancer
+  port: 80
+container:
+  containerPort: 80
+resources:
+  limits:
+    cpu: 200m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 256Mi
+pdb: #pod disruption budget
+  enabled: false
+  minAvailable: 1
